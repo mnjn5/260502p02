@@ -348,7 +348,7 @@ footer {
     );
 }
 
-/* 투자 멘트 + 스크롤 연동 scale (js/scroll-text-scale.js) */
+/* 투자 멘트 — AOS(Animate On Scroll)로 노출 */
 .invest-cta {
     box-sizing: border-box;
     max-width: 52rem;
@@ -364,21 +364,10 @@ footer {
     font-size: clamp(1.25rem, 2.8vw, 1.85rem);
     font-weight: 600;
     line-height: 1.55;
-    transform-origin: center center;
-    opacity: 0.2;
-    will-change: transform, opacity;
 }
 
 .invest-cta__line + .invest-cta__line {
     margin-top: 1rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .invest-cta__line {
-        opacity: 1;
-        transform: none;
-        will-change: auto;
-    }
 }
 
 .main-gallery {

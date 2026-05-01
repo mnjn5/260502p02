@@ -4,7 +4,22 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollChartBackground();
     initScrollTopButton();
     initRevealSectionBackground();
+    initAos();
 });
+
+function initAos() {
+    if (typeof AOS === 'undefined') {
+        return;
+    }
+    AOS.init({
+        duration: 700,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 56,
+        anchorPlacement: 'top-bottom',
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    });
+}
 
 /**
  * 스크롤 진행도에 따라 꺾은선이 왼쪽 하단에서 오른쪽 상단으로 그려진다.
