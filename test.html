@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOS 테스트 — invest-cta</title>
+    <link rel="stylesheet" href="css/aos.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+        }
+        .spacer {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e5e7eb;
+            color: #374151;
+            font-size: 1.1rem;
+        }
+        .invest-cta {
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.75rem;
+        }
+        .invest-cta__item {
+            width: 100%;
+        }
+        .invest-cta__line {
+            margin: 0;
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #111827;
+        }
+    </style>
+</head>
+<body>
+    <div class="spacer">아래로 스크롤하면 AOS가 실행됩니다.</div>
+    <div class="invest-cta">
+        <div class="invest-cta__item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="0">
+            <p class="invest-cta__line">당신의 투자는 지금부터 시작됩니다.</p>
+        </div>
+        <div class="invest-cta__item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="120">
+            <p class="invest-cta__line">냉철한 판단으로 시장의 혼란 속에서도</p>
+        </div>
+        <div class="invest-cta__item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="240">
+            <p class="invest-cta__line">안정적인 수익을 창출하세요.</p>
+        </div>
+    </div>
+    <div class="spacer"></div>
+
+    <script src="js/vendor/aos.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS === 'undefined') {
+                return;
+            }
+            AOS.init({
+                duration: 700,
+                easing: 'ease-out-cubic',
+                once: false,
+                offset: 100,
+            });
+        });
+        window.addEventListener('load', function () {
+            if (typeof AOS !== 'undefined' && typeof AOS.refresh === 'function') {
+                AOS.refresh();
+            }
+        });
+    </script>
+</body>
+</html>

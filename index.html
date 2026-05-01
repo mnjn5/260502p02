@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/aos.css">
 </head>
 <body>
     <div class="scroll-chart-bg" aria-hidden="true">
@@ -127,9 +127,19 @@
             <p style="color : #fff; margin: 100vh 0; font-size: 2.5rem; font-weight: 700;">이제, 차가운 투자자가 될 차례입니다 !</p>
         </div>
         <div class="invest-cta">
-            <p class="invest-cta__line" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">당신의 투자는 지금부터 시작됩니다.</p>
-            <p class="invest-cta__line" data-aos="fade-up" data-aos-duration="700" data-aos-delay="120">냉철한 판단으로 시장의 혼란 속에서도</p>
-            <p class="invest-cta__line" data-aos="fade-up" data-aos-duration="700" data-aos-delay="240">안정적인 수익을 창출하세요.</p>
+            <div class="invest-cta__item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="0" data-aos-once="false">
+                <p class="invest-cta__line">당신의 투자는 지금부터 시작됩니다.</p>
+            </div>
+            <div class="invest-cta__item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="120" data-aos-once="false">
+                <p class="invest-cta__line">냉철한 판단으로 시장의 혼란 속에서도</p>
+            </div>
+            <div class="invest-cta__item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="240" data-aos-once="false">
+                <p class="invest-cta__line">안정적인 수익을 창출하세요.</p>
+            </div>
+        </div>
+
+        <div>
+            <h1 style="font-size: 4rem; font-weight: 700; padding: 20vh 0;">냉철하게 시작하기</h1>
         </div>
 
 
@@ -141,7 +151,7 @@
             <path d="M12 19V5M5 12l7-7 7 7"/>
         </svg>
     </button>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="js/vendor/aos.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>

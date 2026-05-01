@@ -1,24 +1,45 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function () {
+function boot() {
+    initAos();
     initScrollChartBackground();
     initScrollTopButton();
     initRevealSectionBackground();
-    initAos();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+} else {
+    boot();
+}
+
+window.addEventListener('load', function () {
+    if (typeof AOS !== 'undefined' && typeof AOS.refresh === 'function') {
+        AOS.refresh();
+    }
 });
 
 function initAos() {
     if (typeof AOS === 'undefined') {
         return;
     }
+    var reduced = false;
+    try {
+        reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch (e1) {
+        reduced = false;
+    }
     AOS.init({
         duration: 700,
         easing: 'ease-out-cubic',
-        once: true,
-        offset: 56,
-        anchorPlacement: 'top-bottom',
-        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+        /* false: 뷰포트 밖으로 나가면 aos-animate 제거 → zoom-in 등 초기(작은) 상태로 복귀 */
+        once: false,
+        offset: 120,
+        disable: reduced,
     });
+    if (document.readyState === 'complete') {
+        AOS.refresh();
+    }
 }
 
 /**
