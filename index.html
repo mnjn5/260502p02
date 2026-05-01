@@ -97,28 +97,38 @@
     </header>
 
     <main class="site-main">
-        <div>
-            <h1 class="hero-headline">
-                당신을 차갑게<br>
-                만들어줄<br>
-                투자 플랫폼
-            </h1>
-        </div>
-        <div>
-            <div class="main-gallery">
-                <img src="img/img01.png" width="480px" height="860px" alt="갤러리 이미지 1">
-                <img src="img/img02.png" width="480px" height="860px" alt="갤러리 이미지 2">
-                <img src="img/img03.png" width="480px" height="880px" alt="갤러리 이미지 3">
+        <div class="hero-pin-scene">
+            <div class="hero-pin-sticky">
+                <h1 class="hero-headline hero-headline--pin">
+                    당신을 차갑게<br>
+                    만들어줄<br>
+                    투자 플랫폼
+                </h1>
             </div>
         </div>
         <div>
-            <h1 class="hero-headline">
-                시장이 뜨거울수록,<br>
-                <b>투자자의 머리는 차가워야 하니까!</b>
-            </h1>
+            <div class="main-gallery">
+                <img src="img/img01.png" width="256" height="524" alt="갤러리 이미지 1">
+                <img src="img/img02.png" width="246" height="524" alt="갤러리 이미지 2">
+                <img src="img/img03.png" width="259" height="527" alt="갤러리 이미지 3">
+            </div>
         </div>
-        <div>
-
+        <div class="stack-section">
+            <p class="hero-headline">
+                시장이 뜨거울수록,<br>
+                <b>투자자의 머리는 <span style="color: #1509b6;">차가워야</span> 하니까!</b>
+            </p>
+        </div>
+        <div class="stack-section stack-section--scroll-reveal" id="revealColdnessSection">
+            <p class="coldness-lead" style="margin-top: 100vh;">변동성과 불확실함이 가득한 시장에서<br>잃지 않는 단 하나,</p>
+            <h1 class="coldness-title" style="margin-bottom: 20vh;">냉철함</h1>
+            
+            <p style="color : #fff; margin: 100vh 0; font-size: 2.5rem; font-weight: 700;">이제, 차가운 투자자가 될 차례입니다 !</p>
+        </div>
+        <div class="invest-cta" id="investCtaSection">
+            <p class="invest-cta__line">당신의 투자는 지금부터 시작됩니다.</p>
+            <p class="invest-cta__line">냉철한 판단으로 시장의 혼란 속에서도</p>
+            <p class="invest-cta__line">안정적인 수익을 창출하세요.</p>
         </div>
 
 
@@ -131,5 +141,6 @@
         </svg>
     </button>
     <script src="js/main.js" defer></script>
+    <script src="js/scroll-text-scale.js" defer></script>
 </body>
 </html>

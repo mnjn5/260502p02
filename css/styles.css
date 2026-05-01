@@ -6,12 +6,26 @@
     --nav-text: #111827;
     --icon-gradient: linear-gradient(135deg, #c026d3 0%, #7c3aed 35%, #1e3a8a 100%);
     --icon-border: #d1d5db;
+    /* 첫 히어로: 이 높이만큼 스크롤하는 동안 sticky가 뷰포트에 붙음 */
+    --hero-pin-scene-height: 150vh;
+    --hero-pin-sticky-top: 22vh;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
@@ -243,23 +257,146 @@ footer {
     color: var(--nav-text);
 }
 
-.main-gallery {
-    width: 1200px;
-    max-width: 100%;
+/* 첫 히어로: 스크롤 일정 구간 동안 뷰포트에 고정(sticky) */
+.hero-pin-scene {
+    min-height: var(--hero-pin-scene-height);
+}
+
+.hero-pin-sticky {
+    position: sticky;
+    top: var(--hero-pin-sticky-top);
+}
+
+.hero-headline--pin {
+    margin-bottom: 0;
+}
+
+/* <div>에는 height 속성이 없음 → 높이는 CSS로 (최소 한 뷰포트) */
+.stack-section {
+    box-sizing: border-box;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 24px;
+}
+
+.stack-section--inverse {
+    background-color: #000;
+    color: #f9fafb;
+}
+
+.stack-section--inverse .hero-headline {
+    color: #f9fafb;
+}
+
+/*
+ * 스크롤 기반: 섹션 상단이 뷰포트 하단에서 올라오며 1vh 단위로 진행,
+ * 100vh 스크롤 분량에서 배경이 완전 검정 (::before opacity = --reveal).
+ * 메인 좌우 패딩 밖까지 배경이 깔리도록 풀블리드.
+ */
+.stack-section--scroll-reveal {
+    --reveal: 0;
+    position: relative;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: transparent;
+    /* 고정 vh 높이 없음: 안쪽 콘텐츠 + 패딩만으로 박스 높이 결정 */
+    min-height: unset;
+    justify-content: flex-start;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    padding-inline: clamp(1.25rem, 4vw, 2rem);
+}
+
+.stack-section--scroll-reveal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: #000000;
+    opacity: var(--reveal);
+    pointer-events: none;
+}
+
+.stack-section--scroll-reveal > * {
+    position: relative;
+    z-index: 1;
+}
+
+.coldness-lead {
+    margin: 0 0 0.75rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(
+        calc(17 + 232 * var(--reveal)),
+        calc(24 + 226 * var(--reveal)),
+        calc(39 + 212 * var(--reveal))
+    );
+}
+
+.coldness-title {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgb(
+        calc(17 + 232 * var(--reveal)),
+        calc(24 + 226 * var(--reveal)),
+        calc(39 + 212 * var(--reveal))
+    );
+}
+
+/* 투자 멘트 + 스크롤 연동 scale (js/scroll-text-scale.js) */
+.invest-cta {
+    box-sizing: border-box;
+    max-width: 52rem;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 1.5rem;
+    padding: clamp(3rem, 8vh, 6rem) 24px;
+    text-align: center;
+    color: var(--nav-text);
+}
+
+.invest-cta__line {
+    margin: 0;
+    font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+    font-weight: 600;
+    line-height: 1.55;
+    transform-origin: center center;
+    opacity: 0.2;
+    will-change: transform, opacity;
+}
+
+.invest-cta__line + .invest-cta__line {
+    margin-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .invest-cta__line {
+        opacity: 1;
+        transform: none;
+        will-change: auto;
+    }
+}
+
+.main-gallery {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    align-items: start;
 }
 
 .main-gallery img {
-    flex: 1 1 0;
-    min-width: 0;
-    width: 0;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: 8px;
     filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.22))
         drop-shadow(0 4px 10px rgba(15, 23, 42, 0.12));
