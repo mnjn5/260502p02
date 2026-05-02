@@ -445,3 +445,196 @@ footer {
 .scroll-top-btn__icon {
     display: block;
 }
+
+/* 서브 페이지 (소개·다운로드·게시판·문의) */
+.site-main--sub {
+    text-align: left;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+.site-main--sub > *:first-child {
+    margin-top: 0;
+}
+
+.page-title {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--nav-text);
+}
+
+.page-lead {
+    margin: 0 0 2rem;
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.prose {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #374151;
+}
+
+.prose p {
+    margin: 0 0 1rem;
+}
+
+.prose p:last-child {
+    margin-bottom: 0;
+}
+
+.feature-list {
+    margin: 1.5rem 0 0;
+    padding: 0 0 0 1.25rem;
+    color: #374151;
+    line-height: 1.75;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+}
+
+.download-cards {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: 600;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.download-card:hover {
+    border-color: var(--logo-blue);
+    box-shadow: 0 4px 14px rgba(10, 47, 107, 0.08);
+}
+
+.download-card span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.board-wrap {
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+}
+
+.board-table th,
+.board-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.board-table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+}
+
+.board-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.board-table a {
+    color: var(--logo-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.board-table a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font: inherit;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--nav-text);
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+    outline: 2px solid var(--logo-blue);
+    outline-offset: 1px;
+}
+
+.contact-form textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.contact-form__hint {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: #6b7280;
+}
+
+.btn-primary {
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    padding: 0.75rem 1.5rem;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--logo-blue);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.08);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid var(--logo-blue);
+    outline-offset: 2px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 — 게시판</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="LS증권 홈">
+                <span class="logo-ls">
+                    L<span class="logo-s-wrap">S<span class="logo-s-accent" aria-hidden="true"></span></span>
+                </span>
+                <span class="logo-sub">증권</span>
+            </a>
+
+            <nav class="main-nav" aria-label="주요 메뉴">
+                <ul>
+                    <li><a href="story.html">투혼스토리</a></li>
+                    <li><a href="why.html">WHY 투혼</a></li>
+                    <li><a href="download.html">처음이신가요?</a></li>
+                    <li><a href="events.html" class="is-active">이벤트</a></li>
+                    <li><a href="contact.html">문의</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="icon-btn icon-btn--filled" aria-label="앱 바로가기">
+                    <svg class="horn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M7 18c-2-4-1-8 2-11 1.5-1.5 3.5-2 5.5-1.5M17 18c2-4 1-8-2-11-1.5-1.5-3.5-2-5.5-1.5"/>
+                        <path d="M9 17h6M12 6v4"/>
+                    </svg>
+                </button>
+                <button type="button" class="icon-btn icon-btn--outline" aria-label="서비스 메뉴">
+                    <svg class="horn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="hornGradientOutlineEv" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#c026d3"/>
+                                <stop offset="50%" stop-color="#7c3aed"/>
+                                <stop offset="100%" stop-color="#1e3a8a"/>
+                            </linearGradient>
+                        </defs>
+                        <g stroke="url(#hornGradientOutlineEv)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 18c-2-4-1-8 2-11 1.5-1.5 3.5-2 5.5-1.5M17 18c2-4 1-8-2-11-1.5-1.5-3.5-2-5.5-1.5"/>
+                            <path d="M9 17h6M12 6v4"/>
+                        </g>
+                    </svg>
+                </button>
+                <button type="button" class="icon-btn icon-btn--menu" aria-label="전체 메뉴 열기">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main site-main--sub">
+        <h1 class="page-title">이벤트 게시판</h1>
+        <p class="page-lead">진행 중인 이벤트와 공지를 확인하세요. 상세 페이지 연동 시 각 행 링크를 교체하면 됩니다.</p>
+        <div class="board-wrap">
+            <table class="board-table">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width:4rem">번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col" style="width:7.5rem">등록일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="#">신규 가입 고객 대상 수수료 쿠폰 이벤트</a></td>
+                        <td>2026.04.28</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="#">투혼 앱 리뷰 이벤트 (4월)</a></td>
+                        <td>2026.04.10</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="#">봄맞이 시장 코멘터리 라이브 안내</a></td>
+                        <td>2026.03.22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer></footer>
+    <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="페이지 맨 위로 이동" title="맨 위로">
+        <svg class="scroll-top-btn__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
