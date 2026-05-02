@@ -638,3 +638,120 @@ footer {
     outline: 2px solid var(--logo-blue);
     outline-offset: 2px;
 }
+
+/* 푸터 */
+.site-footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    background: #0f172a;
+    color: #cbd5e1;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2.5rem 24px 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 2rem 3rem;
+    align-items: start;
+}
+
+.footer-brand {
+    min-width: 0;
+}
+
+.site-footer .logo--footer {
+    display: inline-flex;
+    margin-bottom: 1.25rem;
+}
+
+.site-footer .logo--footer .logo-ls {
+    color: #f8fafc;
+}
+
+.site-footer .logo--footer .logo-sub {
+    color: #94a3b8;
+}
+
+.footer-address {
+    margin: 0;
+    font-size: 0.875rem;
+    font-style: normal;
+    line-height: 1.65;
+    color: #94a3b8;
+}
+
+.footer-address strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.footer-sitemap {
+    min-width: 0;
+}
+
+.footer-heading {
+    margin: 0 0 1rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.footer-sitemap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 1.5rem;
+}
+
+.footer-sitemap a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.footer-sitemap a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.25rem 24px 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-copy {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+.footer-copy small {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    color: #475569;
+}
+
+@media (max-width: 640px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-sitemap ul {
+        grid-template-columns: 1fr;
+    }
+}
